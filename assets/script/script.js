@@ -1,19 +1,26 @@
 // Dropdown
-function myFunction() {
-	document.getElementById("myDropdown").classList.toggle("show");
-}
+const hamburger = document.getElementById('hamburger-btn')
+const sidebar = document.getElementById('sidebar-area')
 
-// Close the dropdown if the user clicks outside of it
-window.onclick = function(event) {
-	if (!event.target.matches('.filter-bnt')) {
-	var dropdowns = document.getElementsByClassName("dropdown-content");
-	var i;
-	for (i = 0; i < dropdowns.length; i++) {
-		var openDropdown = dropdowns[i];
-		if (openDropdown.classList.contains('show')) {
-		openDropdown.classList.remove('show');
-		}
-	}
-	}
-}
+let opened = true;
 
+hamburger.addEventListener('click', () => {
+	function close() {
+		sidebar.classList.add('sidebar-area__toggle')
+		sidebar.classList.remove('sidebar-area')
+		opened = false
+	}
+	
+	function open() {
+		sidebar.classList.add('sidebar-area')
+		sidebar.classList.remove('sidebar-area__toggle')
+		opened = true
+	}
+
+	if (opened) {
+	  return close()
+	}
+
+	open()
+	console.log("clicked")
+})
