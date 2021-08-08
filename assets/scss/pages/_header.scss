@@ -1,0 +1,117 @@
+// Main Header Starts Here
+.main-header{
+    &-start{
+        display: flex;
+        align-items: center;
+        .hamburger{
+            margin-right: 15px;
+            &-btn{
+                overflow: hidden;
+            }
+        }
+    }
+    &-end{
+        display: flex;
+        align-items: center;
+        .notification{
+            margin: 0 20px;
+        }
+    }
+    nav{
+        padding: 20px;
+        box-shadow: 0px 34px 32px -15px rgba(24, 31, 42, 0.09);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+}
+.search-field{
+    position: relative;
+    max-width: 400px;
+    input{
+        background: #2C394E;
+        border-radius: 38.25px;
+        border: 1px solid #2C394E;
+        padding: 20px 25px;
+        padding-left: 60px;
+        color: #B6B9BE;
+        font-size: 16px;
+        font-weight: 500;
+    }
+    img{
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%) ;
+        left: 30px;
+    }
+}
+.sidebar-area{
+    background: #D9D9D9;
+    max-width: 635px;
+    filter: drop-shadow(50px 65px 98px rgba(0, 0, 0, 0.39));
+    padding: 80px 112px;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    &-item{
+        margin-bottom: 45px;
+    }
+}
+// Main Header Ends Here
+
+
+//Responsive ==>
+
+@media (max-width: 420px) {
+    .main-header nav{
+        padding: 15px 10px;
+    }
+    .main-header-end{
+        display: none !important;
+    }
+}
+
+@media only screen and (min-width: 420px) and (max-width: 574px) {
+    .main-header nav{
+        padding: 20px 10px;
+    }
+    .main-header-end{
+        display: none !important;
+    }
+}
+
+@media (min-width: 575px) and (max-width: 767px) {
+    .main-header-end{
+        margin-left: auto;
+        margin-right: auto;
+        .search-field{
+            input{     
+                padding: 15px 25px;
+            }
+            img{
+                left: 88%;
+            }
+        }
+        .notification{
+            margin: 0 10px;
+        }
+        .avatar-area{
+            margin: 0 !important;
+        }
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .main-header-end{
+        margin-top: 10px;
+        margin-left: auto;
+        margin-right: auto;
+        .avatar-area{
+            margin: 0 !important;
+        }
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {}
